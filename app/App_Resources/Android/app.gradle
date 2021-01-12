@@ -1,0 +1,29 @@
+// Add your native dependencies here:
+
+// android {
+//   defaultConfig {  
+//     generatedDensities = []
+//     applicationId = "org.attention.control"
+//   }
+//   aaptOptions {  
+//     additionalParameters "--no-version-vectors"  
+//   }  
+// } 
+
+
+android {
+  defaultConfig {
+    generatedDensities = []
+    multiDexEnabled true
+    applicationId "org.attention.control"
+  }
+
+  // after adding a few additional Firebase libs we'll need this (otherwise: OutOfMemoryException)
+  dexOptions {
+    javaMaxHeapSize "4g"
+  }
+
+  aaptOptions {
+    additionalParameters "--no-version-vectors"
+  }
+}
